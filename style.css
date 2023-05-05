@@ -1,0 +1,179 @@
+* {
+    padding: 0px;
+    border-style: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    overflow: hidden;
+    background-image: url("back.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+form {
+    min-height: 40vh;
+    max-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin-top: 30px;
+    margin: 3px;
+    align-content: space-around;
+    justify-content: space-around;
+    background: white;
+    background: linear-gradient( to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.4));
+    border-radius: 20px;
+    /* transform: translateY(-60vh); */
+}
+
+label {
+    color: rgb(80, 0, 44);
+    margin: 5px;
+    line-height: 20px;
+    margin: 15px;
+}
+
+h1 {
+    color: rgb(255, 128, 106);
+}
+
+h2 {
+    color: #3700fc;
+    display: inline;
+}
+
+input {
+    color: red;
+    min-height: 20px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+select {
+    color: #33002c;
+    width: 50px;
+    height: 25px;
+    background: #ff5be9;
+    border: 2px solid #b10099;
+    border-radius: 5px;
+}
+
+select:hover {
+    color: black;
+    font-weight: bold;
+    background: #ff3c5c;
+}
+
+#submit {
+    color: yellow;
+    width: 150px;
+    height: 50px;
+    background: red;
+    font-size: 25px;
+    border-radius: 5px;
+    align-content: center;
+    margin: 10px;
+    font-weight: bold;
+    border: none;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background: red;
+    color: white;
+    font-size: 30px;
+}
+
+p {
+    color: black;
+}
+
+#link {
+    /* transform: translateY(-50vh); */
+}
+
+#gen {
+    padding: 3px;
+    background: #17b06b !important;
+    position: relative;
+    color: black;
+    line-height: 20px;
+    min-width: 90%;
+    width: 90%;
+    border-radius: 8px;
+    display: block;
+}
+
+#CNk {
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    /* justify-items: space-around;*/
+}
+
+.txt {
+    text-align: center;
+    color: red;
+    background: white;
+    position: inherit;
+    width: 20%;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.empt {
+    margin: 1px;
+}
+
+.button {
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 130px;
+    line-height: 25px;
+    transition: all 0.01s;
+    cursor: pointer;
+    margin: 13px;
+    display: inline;
+    color: red;
+    border: none;
+    border-radius: 8px;
+    background: yellow;
+    font-size: 17px;
+    padding: 8px;
+}
+
+.button:hover {
+    background: red;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    font-size: 20px;
+    transition: 0.1s;
+}
+
+.button span:after {
+    content: "\00bb";
+    position: absolute;
+    font-size: 18px;
+    opacity: 0;
+    line-height: 50px;
+    top: 0;
+    right: -20px;
+    transition: 0.2s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}

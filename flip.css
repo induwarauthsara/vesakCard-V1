@@ -1,0 +1,172 @@
+body {
+    font-family: sans-serif;
+    background-image: url("yl.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid rgb(144, 112, 120);
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 490px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    margin: 10px;
+}
+
+.flip-card-front {
+    background-color: #000;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: #00ffea;
+    color: black;
+    transform: rotateY(180deg);
+}
+
+.dd {
+    color: black;
+    display: block;
+    max-width: 400px;
+    max-height: 200px;
+    height: 40%;
+    display: none;
+    overflow: scroll;
+    /*  max-width: 245px;
+     max-height: 150px;
+    */
+}
+
+.back {
+    position: relative;
+    background-color: #00ffea;
+    width: 60%;
+    min-height: 80%;
+    flex: 1.5;
+}
+
+.main {
+    margin-top: 50px;
+}
+
+.content {
+    max-height: 65vh;
+    overflow: scroll;
+}
+
+.empt {
+    margin: 20px;
+    min-width: 10vh;
+}
+
+.ep {
+    margin: 20px;
+}
+
+.share {
+    width: 250px;
+    height: 120px;
+    border-radius: 30px;
+    font-size: 20px;
+    border: 5px solid rgb(47, 0, 255);
+    background: green;
+    color: white;
+    padding: 8px;
+    margin: 5px;
+}
+
+.flip-card-back p {
+    bottom: 50px;
+}
+
+img {
+    width: 490px;
+    height: 300px;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin-bottom: 2px;
+    background: red;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 20px;
+    line-height: 35px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin-bottom: 2px;
+    background: red;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 25px;
+    line-height: 35px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.one {
+    justify-content: space-around;
+    align-items: space-around;
+    display: flex;
+}
+
+@media only screen and (min-width: 800px) {
+    .one {
+        width: 75%;
+    }
+}

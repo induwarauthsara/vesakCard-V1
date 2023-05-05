@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    margin-bottom: 2px;
+    background: red;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: 25px;
+    line-height: 35px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.empt {
+    margin: 20px;
+}
+
+.list {
+    margin: 80px auto;
+    height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 15px;
+}
+
+.card img {
+    width: 90%;
+    align-items: center;
+    justify-items: center;
+}
+
+h1 {
+    font-size: 20px;
+    text-align: center;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    background: #333333;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 15px;
+    line-height: 5px;
+    height: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.hom333e {
+    background: black;
+    border-radius: 10px;
+    color: white;
+    padding: 0px 10px;
+}
+
+a {
+    color: red;
+    text-decoration: none;
+}
+
+a:hover {
+    color: yellow;
+}
+
+@media only screen and (max-width: 600px) {
+    .list {
+        grid-template-columns: 1fr;
+    }
+}
