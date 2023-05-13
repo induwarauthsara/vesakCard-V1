@@ -1,11 +1,26 @@
 <?php
-$from = $_GET['from'];
-$to = $_GET['to'];
-$card = $_GET['card'];
-$vcard = "V01";
+// Prevent Get request from XSS attack
+if (isset($_GET['from'])) {
+    $from = $_GET['from'];
+    $from = htmlspecialchars($from);
+} else {
+    $from = "Induwara Uthsara";
+}
 
-if ($to == "g") {
-    $vcard = "1.jpg";
+// to
+if (isset($_GET['to'])) {
+    $to = $_GET['to'];
+    $to = htmlspecialchars($to);
+} else {
+    $to = "You";
+}
+
+//card
+if (isset($_GET['card'])) {
+    $card = $_GET['card'];
+    $card = htmlspecialchars($card);
+} else {
+    $card = "V01";
 }
 
 if ($card == "V01") {
@@ -36,6 +51,12 @@ $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https"
 
 $share_link = "http://induwara.rf.gd/vesak/gen.php?from=" . $from . "%26to=" . $to . "%26card=" . $card;
 
+$fullUrl = 'http';
+if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") {
+    $fullUrl .= "s";
+}
+$fullUrl .= "://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
+$share_link = urlencode($fullUrl);
 
 /*  $q = urlencode($from."&to=".$to."&card=".$card);
 
@@ -57,6 +78,7 @@ $share_link = "http://induwara.rf.gd/vesak/gen.php?from=" . $from . "%26to=" . $
         <?php echo $to; ?>
     </title>
     <link rel="stylesheet" href="flip.css" />
+    <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
 
 </head>
@@ -65,58 +87,57 @@ $share_link = "http://induwara.rf.gd/vesak/gen.php?from=" . $from . "%26to=" . $
 
     <center>
         <header>
-            <a href="http://induwara.rf.gd/vesak/" style="color:black; background:white; padding:0px 8px; display:flex; border-radius:8px;"> Home </a>
+            <a href="index.php" style="color:black; background:white; padding:0px 8px; display:flex; border-radius:8px;"> Create New Card </a>
             <span style="color:black;"> Happy Vesak, <?php echo $to; ?>...! </span>
             <div class="ep"></div>
         </header> <br>
-        <div class="main">
-            <?php echo "From : " . $from . "<br>";
-            echo "To : " . $to . "<br /><br />"  ?>
-            <div class="content">
-                <?php
-
-                echo "<div class='one'>   <div class='dd'> ";
-                echo "<img src='" . $vcard . "' />"; ?></div>
-            <br>
-            <div class="back">
-                <h3>Happy Vesak...!</h3>
-                <p>
-                    From :
-                    <?php echo $from; ?>
-                </p>
-                <p>
-                    To :
-                    <?php echo $to; ?>
-                </p>
+        <div class="container">
+            <div>
+                <span style="font-weight: bold;"> From :</span>
+                <?php echo $from; ?>
             </div>
-        </div>
+            <div>
+                <span style="font-weight: bold;"> To :</span>
+                <?php echo $to; ?>
+            </div>
 
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <img src="<?php echo $vcard; ?>" alt="Avatar" style="width: 490px; height: 300px" />
-                </div>
-                <div class="flip-card-back">
-                    <h1>Happy Vesak...!</h1>
-                    <p>
-                        From :
-                        <?php echo $from; ?>
-                    </p>
-                    <p>
-                        To :
-                        <?php echo $to; ?>
-                    </p>
+            <div class="flip-card card">
+                <div class="flip-card-inner card">
+                    <div class="flip-card-front card">
+                        <img src="<?php echo $vcard; ?>" alt="Avatar" style="width: 490px; height: 300px" class="vesak-card-front-image" />
+                    </div>
+                    <div class="flip-card-back card">
+                        <br>
+                        <h1>Happy Vesak...!</h1>
+                        <flex>
+                            <img class="vesak-card-back-image" src=" art.svg">
+                            <div class="fromTo">
+                                <p>
+                                    <span class="bold"> From :</span> <br>
+                                    <?php echo $from; ?>
+                                </p>
+                                <br>
+                                <p>
+                                    <span class="bold"> To :</span> <br>
+                                    <?php echo $to; ?>
+                                </p>
+                            </div>
+                        </flex>
+                    </div>
                 </div>
             </div>
-        </div>
-        <br /> (click card to rotate)
+            (click card to rotate)
         </div>
         </div>
         <br />
-        <a href="https://api.whatsapp.com/send?text=<?php echo $share_link; ?>" class="share" data-action="share/whatsapp/share" target="_blank">
-            Share Link With Friends
-        </a>
+        <button class="share">
 
+            <a href="https://api.whatsapp.com/send?text=<?php echo $share_link; ?>" data-action="share/whatsapp/share" target="_blank">
+                <img src="whatsapp.png" alt="whatsapp" style="width:20px !important; height:20px !important;" />
+                Share Card with Friend via Whatsapp
+            </a>
+        </button>
+        </div>
     </center>
 </body>
 <?php include('fotter.php') ?>

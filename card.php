@@ -7,16 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Card List</title>
     <link rel="stylesheet" href="card.css" />
-        <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
 
 </head>
 
 <body>
-    <header> <a href="./"> <div class="home" style="    background: black;
+    <header> <a href="./">
+            <div class="home" style="    background: black;
     border-radius: 10px;
+    font-size:20px;
     color: white;
-    padding: 0px 10px;">Home</div></a>Vesak Card List  <div class="empt"></div></header>
-<script>alert("Please wait.. Images are Loading...")</script>
+    padding: 0px 10px;">Go back to Create Card</div>
+        </a>Vesak Card List <div class="empt"></div>
+    </header>
     <center>
         <div class="list">
             <div class="card">
@@ -63,7 +66,7 @@
             </div>
         </div>
     </center>
-<?php  include('fotter.php') ?>
+    <?php include('fotter.php') ?>
 
 </body>
 

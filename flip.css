@@ -19,11 +19,16 @@ body::-webkit-scrollbar-thumb {
     outline: 1px solid rgb(144, 112, 120);
 }
 
+.fromTo {
+    font-size: 20px;
+}
+
 .flip-card {
     background-color: transparent;
     width: 490px;
     height: 300px;
     perspective: 1000px;
+    margin: 20px auto;
 }
 
 .flip-card-inner {
@@ -45,9 +50,10 @@ body::-webkit-scrollbar-thumb {
     position: absolute;
     width: 100%;
     height: 100%;
+    /* width: 429px !important;
+    height: 244px !important; */
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    margin: 10px;
 }
 
 .flip-card-front {
@@ -59,6 +65,7 @@ body::-webkit-scrollbar-thumb {
     background-color: #00ffea;
     color: black;
     transform: rotateY(180deg);
+    padding: 20px;
 }
 
 .dd {
@@ -102,23 +109,42 @@ body::-webkit-scrollbar-thumb {
 
 .share {
     width: 250px;
-    height: 120px;
+    height: 100px;
     border-radius: 30px;
     font-size: 20px;
-    border: 5px solid rgb(47, 0, 255);
-    background: green;
-    color: white;
-    padding: 8px;
+    border: 5px solid green;
+    background: rgb(123, 238, 123);
+    /* color: white; */
+    padding: 10px 25px;
     margin: 5px;
+    line-height: 2rem;
 }
 
 .flip-card-back p {
     bottom: 50px;
 }
 
-img {
+.vesak-card-back-image {
+    width: 60%;
+    height: 154px;
+}
+
+.vesak-card-front-image {
     width: 490px;
     height: 300px;
+    /* width: 100% !important;
+  height: 100% !important; */
+}
+
+.bold {
+    font-weight: bold;
+}
+
+flex {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
 }
 
 header {
@@ -169,4 +195,15 @@ header {
     .one {
         width: 75%;
     }
+}
+
+.card {
+    width: 490px;
+    bottom: 0px;
+    top: 0px;
+    height: 300px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
